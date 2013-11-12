@@ -1,5 +1,12 @@
-* Graphics and looks
+* Start up
 
+  Start with the scratch buffer; no start up screen.
+
+  #+NAME: startup
+  #+BEGIN_SRC emacs-lisp
+    (setq inhibit-startup-screen +1)
+  #+END_SRC
+* Graphics and looks
 ** Font
 
    I like [[http://www.levien.com/type/myfonts/inconsolata.html][Inconsolata]], but it doesn't support a wide range of Unicode
@@ -22,7 +29,6 @@
                                     :weight 'normal)))
 
    #+END_SRC
-
 
 ** Reduce clutter
 
@@ -101,3 +107,18 @@
       `((".*" ,temporary-file-directory t)))
   #+END_SRC
 
+* Org mode
+** Org-Babel
+
+   Use syntax highlighting ("fontification") in org-mode source
+   blocks, and use a slightly darker background to visually separate
+   the source block from its surroundings.
+
+   This also highlights source blocks in HTML exports.
+
+   #+name: org-config
+   #+BEGIN_SRC emacs-lisp
+     (setq org-src-fontify-natively 't)
+     (set-face-attribute 'org-block-background nil
+                         :background "#f0f0e8")
+   #+END_SRC
