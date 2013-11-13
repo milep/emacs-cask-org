@@ -156,6 +156,17 @@
      (set-face-attribute 'org-block-background nil
                          :background "#f0f0e8")
    #+END_SRC
+** Language evaluation support
+
+   Org-Babel needs to be told that evaluation of certain languages is
+   allowed. Start editing with C-c '
+
+   #+name: org-config :noweb no-export
+   #+BEGIN_SRC emacs-lisp
+     (org-babel-do-load-languages
+      'org-babel-load-languages
+      '((emacs-lisp . t)))
+   #+END_SRC
 * Custom functions
 ** Duplicate line  
   #+NAME: custom-functions
