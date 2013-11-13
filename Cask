@@ -4,4 +4,5 @@
 (source "marmalade" "http://marmalade-repo.org/packages/")
 
 (depends-on "git-gutter-fringe")
+(depends-on "magit")
 (depends-on "pallet")

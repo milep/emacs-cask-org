@@ -196,7 +196,6 @@
 
   #+name: global-keys
   #+BEGIN_SRC emacs-lisp
-    ;;(global-set-key "\C-cg" 'magit-status)
-    ;;(global-set-key "\C-cq" 'delete-indentation)
+    (global-set-key "\C-cg" 'magit-status)
     (global-set-key "\C-cd" 'duplicate-line)
   #+END_SRC
