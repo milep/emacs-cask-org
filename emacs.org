@@ -109,6 +109,7 @@
     <<global-navigation>>
     <<org-config>>
     <<startup>>
+    <<custom-functions>>
   #+END_SRC
 * Options set using the customize interface
 
@@ -146,3 +147,56 @@
      (set-face-attribute 'org-block-background nil
                          :background "#f0f0e8")
    #+END_SRC
+* Custom functions
+** Duplicate line  
+  #+NAME: custom-functions
+  #+BEGIN_SRC emacs-lisp
+    (defun duplicate-line (arg)
+      "Duplicate current line, leaving point in lower line."
+      (interactive "*p")
+    
+      ;; save the point for undo
+      (setq buffer-undo-list (cons (point) buffer-undo-list))
+    
+      ;; local variables for start and end of line
+      (let ((bol (save-excursion (beginning-of-line) (point)))
+            eol)
+        (save-excursion
+    
+          ;; don't use forward-line for this, because you would have
+          ;; to check whether you are at the end of the buffer
+          (end-of-line)
+          (setq eol (point))
+    
+          ;; store the line and disable the recording of undo information
+          (let ((line (buffer-substring bol eol))
+                (buffer-undo-list t)
+                (count arg))
+            ;; insert the line arg times
+            (while (> count 0)
+              (newline)         ;; because there is no newline in 'line'
+              (insert line)
+              (setq count (1- count)))
+            )
+    
+          ;; create the undo information
+          (setq buffer-undo-list (cons (cons eol (point))
+          buffer-undo-list)))
+        ) ; end-of-let
+    
+      ;; put the point in the lowest line and return
+      (next-line arg))
+  #+END_SRC
+
+* Global key bindings
+
+  As far as reasonable, I try to keep my custom key bindings within
+  the "official" restraints. Specifically, I want my global key
+  bindings to start with =C-c [lower case letter]=.
+
+  #+name: global-keys
+  #+BEGIN_SRC emacs-lisp
+    ;;(global-set-key "\C-cg" 'magit-status)
+    ;;(global-set-key "\C-cq" 'delete-indentation)
+    (global-set-key "\C-cd" 'duplicate-line)
+  #+END_SRC
