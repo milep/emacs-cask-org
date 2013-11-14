@@ -92,6 +92,7 @@
 
   #+NAME: auto-complete
   #+BEGIN_SRC emacs-lisp
+    (company-mode)
     (add-hook 'after-init-hook 'global-company-mode)
   #+END_SRC
 * Configuration file layout
@@ -112,8 +113,8 @@
     <<customize-config>>
     <<look-and-feel>>
     <<formatting>>
-    <<programming-setup>>
     <<auto-complete>>
+    <<programming-setup>>
     <<global-keys>>
     <<global-navigation>>
     <<org-config>>
@@ -167,6 +168,15 @@
       'org-babel-load-languages
       '((emacs-lisp . t)))
    #+END_SRC
+* Programming
+** Ruby
+    #+NAME: programming-setup
+    #+BEGIN_SRC emacs-lisp
+      (push 'company-robe company-backends)
+      (add-hook 'ruby-mode-hook 'robe-mode)
+      (add-hook 'enh-ruby-mode-hook 'robe-mode)
+    #+END_SRC
+  
 * Custom functions
 ** Duplicate line  
   #+NAME: custom-functions

@@ -3,9 +3,11 @@
 (source "melpa" "http://melpa.milkbox.net/packages/")
 (source "marmalade" "http://marmalade-repo.org/packages/")
 
+(depends-on "[cl-struct-package-desc enh-ruby-mode (20131105 1956) Major mode for editing Ruby files [github] nil tar melpa nil nil nil]")
 (depends-on "[cl-struct-package-desc org (20131112) Outline-based notes management and organizer nil tar org nil nil nil]")
 (depends-on "company")
 (depends-on "git-gutter-fringe")
 (depends-on "inf-ruby")
 (depends-on "magit")
 (depends-on "pallet")
+(depends-on "robe")
