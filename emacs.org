@@ -88,14 +88,11 @@
      (setq mouse-wheel-follow-mouse 't)
      (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
    #+END_SRC
-* Auto-complete
-
-  [[http://cx4a.org/software/auto-complete/manual.html][Manual]]
+* Company for auto complete
 
   #+NAME: auto-complete
   #+BEGIN_SRC emacs-lisp
-    (require 'auto-complete-config)
-    (ac-config-default)
+    (add-hook 'after-init-hook 'global-company-mode)
   #+END_SRC
 * Configuration file layout
 
