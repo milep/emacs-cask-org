@@ -229,3 +229,11 @@
     (global-set-key "\C-cg" 'magit-status)
     (global-set-key "\C-cd" 'duplicate-line)
   #+END_SRC
+* Global navigation
+  #+name: global-navigation
+  #+BEGIN_SRC emacs-lisp
+    (ido-mode t)
+    ;;(setq ido-enable-flex-matching t)
+
+    ;;(global-set-key "\M-x" 'smex)
+  #+END_SRC
