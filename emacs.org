@@ -233,7 +233,7 @@
   #+name: global-navigation
   #+BEGIN_SRC emacs-lisp
     (ido-mode t)
-    ;;(setq ido-enable-flex-matching t)
+    (setq ido-enable-flex-matching t)
 
     ;;(global-set-key "\M-x" 'smex)
   #+END_SRC
