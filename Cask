@@ -21,3 +21,4 @@
 (depends-on "robe")
 (depends-on "s")
 (depends-on "smex")
+(depends-on "yaml-mode")
