@@ -3,6 +3,7 @@
 (source melpa)
 (source marmalade)
 
+(depends-on "ace-jump-mode")
 (depends-on "cask")
 (depends-on "company")
 (depends-on "dash")
