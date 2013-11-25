@@ -218,6 +218,19 @@
       (next-line arg))
   #+END_SRC
 
+** Comment or uncomment current line
+  #+NAME: custom-functions
+  #+BEGIN_SRC emacs-lisp
+    (defun comment-or-uncomment-region-or-line ()
+        "Comments or uncomments the region or the current line if there's no active region."
+        (interactive)
+        (let (beg end)
+            (if (region-active-p)
+                (setq beg (region-beginning) end (region-end))
+                (setq beg (line-beginning-position) end (line-end-position))
+                (next-line))
+            (comment-or-uncomment-region beg end)))
+  #+END_SRC
 * Global key bindings
 
   As far as reasonable, I try to keep my custom key bindings within
@@ -228,6 +241,7 @@
   #+BEGIN_SRC emacs-lisp
     (global-set-key "\C-cg" 'magit-status)
     (global-set-key "\C-cd" 'duplicate-line)
+    (global-set-key "\C-cc" 'comment-or-uncomment-region-or-line)
   #+END_SRC
 * Global navigation
   #+name: global-navigation
