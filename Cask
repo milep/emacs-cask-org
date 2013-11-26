@@ -10,6 +10,7 @@
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
 (depends-on "f")
+(depends-on "flx-ido")
 (depends-on "fringe-helper")
 (depends-on "git-commit-mode")
 (depends-on "git-gutter")
