@@ -20,6 +20,7 @@
 (depends-on "magit")
 (depends-on "org")
 (depends-on "pallet")
+(depends-on "projectile")
 (depends-on "robe")
 (depends-on "s")
 (depends-on "smex")
