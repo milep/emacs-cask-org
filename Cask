@@ -21,6 +21,7 @@
 (depends-on "magit")
 (depends-on "org")
 (depends-on "pallet")
+(depends-on "pbcopy")
 (depends-on "projectile")
 (depends-on "robe")
 (depends-on "s")

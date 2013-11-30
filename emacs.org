@@ -268,3 +268,8 @@
     
     (projectile-global-mode)
   #+END_SRC
+* pbcopy
+  #+name: tools
+  #+BEGIN_SRC emacs-lisp
+    (unless window-system (turn-on-pbcopy))
+  #+END_SRC
