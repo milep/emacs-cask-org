@@ -25,6 +25,7 @@
 (depends-on "projectile")
 (depends-on "robe")
 (depends-on "s")
+(depends-on "smart-mode-line")
 (depends-on "smartparens")
 (depends-on "smex")
 (depends-on "yaml-mode")
