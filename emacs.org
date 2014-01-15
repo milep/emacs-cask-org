@@ -267,8 +267,8 @@
     (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
     
     (projectile-global-mode)
-    (setq sml/theme 'light)
     (sml/setup)
+    (sml/apply-theme 'light t)
   #+END_SRC
 * pbcopy
   #+name: tools
