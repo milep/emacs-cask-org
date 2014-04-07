@@ -6,6 +6,7 @@
   #+BEGIN_SRC emacs-lisp
     (setq inhibit-startup-screen +1)
   #+END_SRC
+
 * Graphics and looks
 ** Font
 
@@ -92,8 +93,8 @@
 
   #+NAME: auto-complete
   #+BEGIN_SRC emacs-lisp
-    (company-mode)
-    (add-hook 'after-init-hook 'global-company-mode)
+    ;(company-mode)
+    ;(add-hook 'after-init-hook 'global-company-mode)
   #+END_SRC
 * Configuration file layout
 
@@ -172,7 +173,7 @@
 ** Ruby
     #+NAME: programming-setup
     #+BEGIN_SRC emacs-lisp
-      (push 'company-robe company-backends)
+      ;(push 'company-robe company-backends)
       (add-hook 'ruby-mode-hook 'robe-mode)
       (add-hook 'enh-ruby-mode-hook 'robe-mode)
     #+END_SRC
@@ -248,6 +249,8 @@
     (global-set-key "\C-cg" 'magit-status)
     (global-set-key "\C-cd" 'duplicate-line)
     (global-set-key "\C-cc" 'comment-or-uncomment-region-or-line)
+    (global-set-key "\C-xd" 'dired-jump)
+    
   #+END_SRC
 * Global navigation
   #+name: global-navigation
@@ -267,8 +270,10 @@
     (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
     
     (projectile-global-mode)
-    (sml/setup)
-    (sml/apply-theme 'light t)
+    ;;; sml not working in 24.4.50.1?
+    ;(setq sml/theme 'light)
+    ;(sml/setup)
+    
   #+END_SRC
 * pbcopy
   #+name: tools
