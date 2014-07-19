@@ -173,9 +173,13 @@
 ** Ruby
     #+NAME: programming-setup
     #+BEGIN_SRC emacs-lisp
+      (require 'rbenv)
+      (global-rbenv-mode)
       ;(push 'company-robe company-backends)
       (add-hook 'ruby-mode-hook 'robe-mode)
       (add-hook 'enh-ruby-mode-hook 'robe-mode)
+      (require 'flymake-ruby)
+      (add-hook 'enh-ruby-mode-hook 'flymake-ruby-load)
     #+END_SRC
 ** Smartparens
     #+NAME: programming-setup

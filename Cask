@@ -29,3 +29,6 @@
 (depends-on "smartparens")
 (depends-on "smex")
 (depends-on "yaml-mode")
+(depends-on "flymake")
+(depends-on "flymake-ruby")
+(depends-on "rbenv")
