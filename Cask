@@ -32,3 +32,4 @@
 (depends-on "flymake")
 (depends-on "flymake-ruby")
 (depends-on "rbenv")
+(depends-on "rubocop")
